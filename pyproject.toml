@@ -1,0 +1,42 @@
+[project]
+name = "pdf-bookmark-editor"
+version = "1.0.0"
+description = "Edit PDF bookmarks and page labels using clean TOML format"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pymupdf>=1.26.5",
+    "tomli>=2.3.0; python_version < '3.11'",
+    "tomli-w>=1.2.0",
+]
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+keywords = ["pdf", "bookmarks", "toc", "table-of-contents", "toml", "page-labels"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Office/Business",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+pdf-bookmarks = "pdf_bookmark_editor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pdf-bookmark-editor"
+Repository = "https://github.com/yourusername/pdf-bookmark-editor"
+Issues = "https://github.com/yourusername/pdf-bookmark-editor/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pdf_bookmark_editor"]
