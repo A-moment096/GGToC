@@ -45,5 +45,5 @@ output/
 # Virtual environments
 .venv
 
-resources
+# resources
 output
