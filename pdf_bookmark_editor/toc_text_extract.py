@@ -356,14 +356,17 @@ class TocTextExtractor:
             f.write("_instructions = [\n")
             f.write('    "Edit bookmarks below",\n')
             f.write('    "level: hierarchy level (1=top, 2=sub, 3=sub-sub, etc.)",\n')
-            f.write('    "page: page number (1-based)",\n')
+            f.write('    "page: physical page number or page-label text (e.g., 12, xviii, A-12)",\n')
             f.write('    "title: bookmark text",\n')
             f.write("\n")
             f.write('    "This file was generated from embedded PDF text.",\n')
             f.write('    "Verify page numbers and hierarchy before importing.",\n')
+            f.write('    "page_numbering: relative (default) or absolute",\n')
             f.write("]\n\n")
 
+            f.write('page_numbering = "relative"\n\n')
             f.write("bookmark = [\n")
+            
             for entry in entries:
                 title = entry.title.replace("\\", "\\\\").replace('"', '\\"')
                 f.write(

@@ -165,6 +165,8 @@ def main():
     extract_parser.add_argument('start_page', help='Start page of TOC (1-based)')
     extract_parser.add_argument('end_page', help='End page of TOC (1-based)')
     extract_parser.add_argument('--output', '-o', help='Output TOML file')
+
+    version_parser = subparsers.add_parser('version', help="Print current version")
     
     args = parser.parse_args()
     
@@ -179,6 +181,8 @@ def main():
         return import_command(args)
     elif args.command == 'extract-toc':
         return extract_toc_command(args)
+    elif args.command == 'version':
+        print("version: 1.0.0")
     
     return 0
 
